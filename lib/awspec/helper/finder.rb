@@ -9,6 +9,7 @@ require 'awspec/helper/finder/ecs'
 require 'awspec/helper/finder/efs'
 require 'awspec/helper/finder/security_group'
 require 'awspec/helper/finder/rds'
+require 'awspec/helper/finder/redshift'
 require 'awspec/helper/finder/route53'
 require 'awspec/helper/finder/s3'
 require 'awspec/helper/finder/autoscaling'
@@ -60,6 +61,7 @@ module Awspec::Helper
     include Awspec::Helper::Finder::Firehose
     include Awspec::Helper::Finder::SecurityGroup
     include Awspec::Helper::Finder::Rds
+    include Awspec::Helper::Finder::Redshift
     include Awspec::Helper::Finder::Route53
     include Awspec::Helper::Finder::S3
     include Awspec::Helper::Finder::Autoscaling
@@ -101,6 +103,7 @@ module Awspec::Helper
       efs_client: Aws::EFS::Client,
       firehose_client: Aws::Firehose::Client,
       rds_client: Aws::RDS::Client,
+      redshift_client: Aws::Redshift::Client,
       route53_client: Aws::Route53::Client,
       s3_client: Aws::S3::Client,
       autoscaling_client: Aws::AutoScaling::Client,
